@@ -10,6 +10,7 @@ import { CaracteristiqueComponent } from './fm/components/caracteristique/caract
 import { CompetenceComponent } from './fm/components/competence/competence.component';
 import { SauvegardeComponent } from './fm/components/sauvegarde/sauvegarde.component';
 import { TalentComponent } from './fm/components/talent/talent.component';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -20,11 +21,13 @@ import { TalentComponent } from './fm/components/talent/talent.component';
     CompetenceComponent,
     SauvegardeComponent,
     TalentComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
