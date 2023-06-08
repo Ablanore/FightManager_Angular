@@ -1,23 +1,7 @@
-<p>Caracteristiques</p>
-Faire la liste des 6 carac avec des trucs plus et moins tout jolis<br/><br/>
-<mat-list-item *ngFor="let carac of caracteristiques; let i = index">
-    <span mat-line>{{ carac. }}</span>
-</mat-list-item>
-
-<!--
-<mat-list-item *ngFor="let comment of comments; let i = index"
-               [@listItem]="animationStates[i]"
-               (mouseenter)="onListItemMouseEnter(i)"
-               (mouseleave)="onListItemMouseLeave(i)">
-    <span class="comment-text" mat-line>{{ comment.comment }}</span><br/>
-    <span class="comment-date" mat-line>{{ comment.createdDate | timeAgo }}</span>
-</mat-list-item>
-
-<span>Caractéristique</span><span>Valeur</span><span>Modificateur</span><span>Bonus racial</span><br/>
-<span>Force : </span><input id="Force" type="number" min="1" max="30"><span></span><span></span><br/>
-<span>Dextérité : </span><input id="Dexterite" type="number" min="1" max="30"><span></span><span></span><br/>
-<span>Constitution : </span><input id="Constitution" type="number" min="1" max="30"><span></span><span></span><br/>
-<span>Intelligence : </span><input id="Intelligence" type="number" min="1" max="30"><span></span><span></span><br/>
-<span>Sagesse : </span><input id="Sagesse" type="number" min="1" max="30"><span></span><span></span><br/>
-<span>Charisme : </span><input id="Charisme" type="number" min="1" max="30"><span></span><span></span><br/>
--->
+<div>
+    <span id="carac-{{ nomCarac}}">{{ nomDeLaCarac }}</span>
+    <input type="number" [formControl]="valueCarac" class="valueCarac">
+    <span id="modRacial-{{ nomCarac }}">{{ modRacial.toString() }}</span>
+    <span id="valueFinal-{{ nomCarac }}">{{ valueFinal.toString() }}</span>
+    <span id="modFinal-{{ nomCarac }}">{{ modFinal.toString() }}</span><br/>
+</div>

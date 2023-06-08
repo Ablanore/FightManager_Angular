@@ -3,14 +3,13 @@ span {
     min-width: 100px;
     margin-left: 10px;
     margin-right: 10px;
-    text-align: center;
 }
 input {
-    //min-width: 95px;
+    min-width: 95px;
     margin-left: 10px;
     margin-right: 10px;
 }
-.valueCarac {
-    width: 40px;
+mat-checkbox {
+    width: 130px;
     text-align: center;
 }

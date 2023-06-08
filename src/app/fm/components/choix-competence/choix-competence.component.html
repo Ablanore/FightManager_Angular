@@ -1,0 +1,9 @@
+<div>
+    <span id="nomDeLaCompe-{{ nomCompeChoix }}">{{ nomDeLaCompe }}</span>
+    <mat-form [formGroup]="formCompe">
+        <input type="checkbox" formControlName="chkCompe" [disabled]="true" />
+        <!--<mat-checkbox id="toto" formControlName="chkCompe"></mat-checkbox>-->
+    </mat-form>
+    <!--<span id="value-{{ nomCompeChoix }}">{{ formation }}</span>-->
+    <span id="obligatoire-{{ nomCompeChoix }}">{{ obligatoire }}</span><br/>
+</div>

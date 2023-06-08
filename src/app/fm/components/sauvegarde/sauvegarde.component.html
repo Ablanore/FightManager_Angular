@@ -1,7 +1,9 @@
-<p>Sauvegardes</p>
-Faire la liste des 4 sauvegardes du personnage avec le détail du calcul<br/>
-<span>Sauvegarde</span><span>Valeur</span><span>Modificateur</span><span>Bonus racial</span><br/>
-<span>CA : </span><input id="Force" type="number" min="1" max="30"><span></span><span></span><br/>
-<span>Réflexes : </span><input id="Force" type="number" min="1" max="30"><span></span><span></span><br/>
-<span>Vigueur : </span><input id="Force" type="number" min="1" max="30"><span></span><span></span><br/>
-<span>Volonté : </span><input id="Force" type="number" min="1" max="30"><span></span><span></span><br/>
+<div>
+    <span id="nomDeLaSauve-{{ nomSauve}}">{{ nomDeLaSauve }}</span>
+    <span id="value-{{ nomSauve}}">{{ value.toString() }}</span>
+    <span id="halfLevel-{{ nomSauve}}">{{ halfLevel.toString() }}</span>
+    <span id="modCarac-{{ nomSauve }}">{{ modCarac.toString() }}</span>
+    <span id="modRacial-{{ nomSauve }}">{{ modRacial.toString() }}</span>
+    <span id="modClassial-{{ nomSauve }}">{{ modClassial.toString() }}</span>
+    <span id="divers-{{ nomSauve }}">{{ divers.toString() }}</span><br/>
+</div>

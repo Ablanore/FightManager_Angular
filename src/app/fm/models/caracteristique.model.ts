@@ -1,22 +1,28 @@
 export enum enumCaracteristique {
-    Force = "Force",
-    Constitution = "Constitution",
-    Dexterite = "Dextérité",
-    Intelligence = "Intelligence",
-    Sagesse = "Sagesse",
-    Charisme = "Charisme"
+    AForce = "Force",
+    BConstitution = "Constitution",
+    CDexterite = "Dextérité",
+    DIntelligence = "Intelligence",
+    ESagesse = "Sagesse",
+    FCharisme = "Charisme"
+}
+export function getEnumMemberByKey<T extends keyof typeof enumCaracteristique>(key: T) {
+    if (enumCaracteristique[key]) { 
+        return enumCaracteristique[key]; 
+    }
+    return enumCaracteristique.AForce;
 }
 export interface iFaceCaracteristique {  
     nom: string;
     index: number;
 }
 export const constCaracteristique: { [key in enumCaracteristique]: iFaceCaracteristique } = {
-    [enumCaracteristique.Force]:{nom: 'Force', index: 0},
-    [enumCaracteristique.Constitution]:{nom: 'Constitution', index: 1},
-    [enumCaracteristique.Dexterite]:{nom: 'Dextérité', index: 2},
-    [enumCaracteristique.Intelligence]:{nom: 'Intelligence', index: 3},
-    [enumCaracteristique.Sagesse]:{nom: 'Sagesse', index: 4},
-    [enumCaracteristique.Charisme]:{nom: 'Charisme', index: 5},
+    [enumCaracteristique.AForce]:{nom: 'Force', index: 0},
+    [enumCaracteristique.BConstitution]:{nom: 'Constitution', index: 1},
+    [enumCaracteristique.CDexterite]:{nom: 'Dextérité', index: 2},
+    [enumCaracteristique.DIntelligence]:{nom: 'Intelligence', index: 3},
+    [enumCaracteristique.ESagesse]:{nom: 'Sagesse', index: 4},
+    [enumCaracteristique.FCharisme]:{nom: 'Charisme', index: 5},
 };
 export class Caracteristique {
     private _nom: enumCaracteristique;
@@ -25,6 +31,7 @@ export class Caracteristique {
     private _index:number;
     
     constructor(nom: enumCaracteristique, valeur: number) {
+        //console.log('biloute MODEL constructor Caractéristique');
         this._nom = nom;
         this._valeur = valeur;
         this._modificateur = Math.floor((valeur - 10) / 2);

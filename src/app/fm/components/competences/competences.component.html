@@ -1,0 +1,5 @@
+<div>
+    <p>Les Compétences</p>
+    <span>Compétence</span><span>Valeur</span><span>Formation</span><span>Mod Carac +<br/> 1/2 niveau</span><span>Divers</span><br/>
+    <app-competence *ngFor="let c of enumCompe | keyvalue;" [nomCompe]="c.value"></app-competence>
+</div>

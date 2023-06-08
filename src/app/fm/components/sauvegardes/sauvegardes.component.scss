@@ -3,14 +3,12 @@ span {
     min-width: 100px;
     margin-left: 10px;
     margin-right: 10px;
-    text-align: center;
 }
 input {
-    //min-width: 95px;
+    min-width: 95px;
     margin-left: 10px;
     margin-right: 10px;
 }
-.valueCarac {
-    width: 40px;
-    text-align: center;
+div {
+    border: solid 1px red;
 }

@@ -1,0 +1,6 @@
+<div>
+    <p>choix des compétences en fonction de la classe.</p>
+    <p>vous avez choisi {{ nbCompeChoisie }} compétence parmi les {{ nbCompeTotale }} disponible</p>
+    <span>Compétence</span><span>Formation</span><span>Obligatoire</span><br/>
+    <app-choix-competence *ngFor="let c of enumCompeChoix;" [nomCompeChoix]="c"></app-choix-competence>
+</div>

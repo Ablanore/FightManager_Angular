@@ -1,0 +1,6 @@
+<div>
+    <p>Les Sauvegardes</p>
+    <span>Sauvegarde</span><span>Valeur</span><span>10 + 1/2 niveau</span>
+    <span>Mod Carac</span><span>Mod Racial</span><span>Mod Classial</span><span>Divers</span><br/>
+    <app-sauvegarde *ngFor="let c of enumSauve | keyvalue;" [nomSauve]="c.value"></app-sauvegarde>
+</div>

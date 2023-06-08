@@ -1,0 +1,9 @@
+<div>
+    <p>Les caracteristiques du personnage</p>
+    <span id="carac-title">Nom Carac</span>
+    <span id="value-title">Value carac</span>
+    <span id="modRacial-title">Mod Racial</span>
+    <span id="valueFinal-title">Value final</span>
+    <span id="modFinal-title">Mod final</span><br/>
+    <app-caracteristique *ngFor="let c of enumCarac | keyvalue;" [nomCarac]="c.value"></app-caracteristique>
+</div>
