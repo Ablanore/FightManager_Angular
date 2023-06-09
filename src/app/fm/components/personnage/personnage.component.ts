@@ -54,7 +54,7 @@ export class PersonnageComponent implements OnInit {
         item.formation = false;
       });
       //remise à zéro du nombre de compétences choisies
-      //this.unPersonnage.nbCompeChoisie = 0;
+      this.unPersonnage.nbCompeChoisie = 0;
       //placement des formations obligatoires
       this.unPersonnage.classe.competencesClasse.filter(dataFiltree => (dataFiltree.obligatoire === true)).forEach((item:any) => {
         this.unPersonnage.competencesPersonnage[Competence.retournerIndex(item.nom)].formation = true;

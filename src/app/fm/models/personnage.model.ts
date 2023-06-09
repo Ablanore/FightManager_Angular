@@ -83,7 +83,7 @@ export class Personnage {
     public get pointsExperience() { return this._pointsExperience; }
     public set pointsExperience(lesPointsExperience: number) { this._pointsExperience = lesPointsExperience; }
     public get nbCompeChoisie() { return this._nbCompeChoisie; }
-    public set nbCompeChoisie(LenbCompeChoisie: number) { this.nbCompeChoisie = LenbCompeChoisie; }
+    public set nbCompeChoisie(LenbCompeChoisie: number) { this._nbCompeChoisie = LenbCompeChoisie; }
     
     //#region Méthodes et calculs concernant les caractéristiques
     public get caracteristiquesBase() { return this._caracteristiquesBase; }

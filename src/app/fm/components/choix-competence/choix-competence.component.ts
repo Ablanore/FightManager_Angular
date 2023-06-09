@@ -13,6 +13,7 @@ import { Personnage } from '../../models/personnage.model';
 })
 export class ChoixCompetenceComponent {
   @Input() nomCompeChoix!: iCompeChoix;
+  @Input() stopChoixData!: boolean;
   subPersonnage!: Subscription;
   unPersonnage!: Personnage;
   compe!: Competence;
@@ -20,14 +21,15 @@ export class ChoixCompetenceComponent {
   formation: number = 0;  
   obligatoire: string = '';
   isObligated: boolean = false;
-  formCompe: FormGroup = new FormGroup({chkCompe: new FormControl(false) });
+  formCompe: FormGroup = new FormGroup({chkCompe: new FormControl(false) });  
   
   constructor(private formBuilder: FormBuilder, private personnageService: PersonnageService) { 
-    //console.log('biloute Constructor Choix competence sans S');
+    //console.log('biloute Constructor Choix competence sans S');    
   }
 
   ngOnInit(): void {
     //console.log('biloute OnInit Choix competence sans S');
+    console.log('je suis au début du OnInit du enfant et je vaut ' + this.stopChoixData.toString());
     this.unPersonnage = this.personnageService.defaultPersonnage;    
     this.subPersonnage = this.personnageService.monPersonnage$.subscribe(personnage => {
       
@@ -50,8 +52,13 @@ export class ChoixCompetenceComponent {
         return laCompe.nom === this.nomCompeChoix.nom;
       })!.formation = value;
       this.personnageService.updatePersonnage(this.unPersonnage);
-      console.log(this.unPersonnage);
-    })
+      //console.log(this.unPersonnage);
+    });
+    //blocage des case à cocher si trop de compétence choisie
+    if (this.stopChoixData) { 
+      this.formCompe.get('chkCompe')?.disable();
+      console.log('je suis dans le StopComp de lenfant');
+    }
   }  
   ngOnDestroy(): void {
       this.subPersonnage.unsubscribe();
