@@ -28,8 +28,7 @@ export class ChoixCompetenceComponent {
   }
 
   ngOnInit(): void {
-    //console.log('biloute OnInit Choix competence sans S');
-    console.log('je suis au début du OnInit du enfant et je vaut ' + this.stopChoixData.toString());
+    //console.log('biloute OnInit Choix competence sans S');    
     this.unPersonnage = this.personnageService.defaultPersonnage;    
     this.subPersonnage = this.personnageService.monPersonnage$.subscribe(personnage => {
       
@@ -54,12 +53,25 @@ export class ChoixCompetenceComponent {
       this.personnageService.updatePersonnage(this.unPersonnage);
       //console.log(this.unPersonnage);
     });
-    //blocage des case à cocher si trop de compétence choisie
-    if (this.stopChoixData) { 
-      this.formCompe.get('chkCompe')?.disable();
-      console.log('je suis dans le StopComp de lenfant');
+  }
+  ngDoCheck(): void {
+    //vérification du stopChoixData pour rétablir les cases à cocher
+    if (!this.stopChoixData) {
+      this.formCompe.get('chkCompe')?.enable();
+      if (this.nomCompeChoix.obligatoire) {
+        this.formCompe.get('chkCompe')?.disable();
+      }      
     }
-  }  
+  }
+  ngOnChanges(): void {
+    //blocage des case à cocher si trop de compétence choisie
+    if (this.stopChoixData) {
+      if (!this.formCompe.get('chkCompe')?.value) {
+        this.formCompe.get('chkCompe')?.disable();
+      }      
+    }
+    console.log(this.unPersonnage);
+  }
   ngOnDestroy(): void {
       this.subPersonnage.unsubscribe();
   }

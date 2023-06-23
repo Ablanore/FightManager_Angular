@@ -19,6 +19,7 @@ export class PersonnageComponent implements OnInit {
   listeRace!: iListeRace[];
   listeClasse!: iListeClasse[];
   unPersonnage!: Personnage;
+  nomPersonnage: string = '';
 
   constructor(private personnageService: PersonnageService) { 
     //console.log('biloute construtor Personnage');
@@ -27,6 +28,8 @@ export class PersonnageComponent implements OnInit {
   ngOnInit(): void {
     //console.log('biloute OnInit Personnage');
     this.unPersonnage = this.personnageService.defaultPersonnage;
+    //Gestion du nom du personnage
+    //this.nomPersonnage = document.getElementById('nomPersonnage');
     //Chargement de la liste des races
     this.listeRace = RaceData.map((data: any) => {
       return {

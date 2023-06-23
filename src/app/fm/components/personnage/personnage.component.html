@@ -1,7 +1,6 @@
 <div>
     <p>Personnage</p>
-    Formulaire à mettre au point avec les détails du personnage<br/><br/>
-    Liste déroulante des races<br/>
+    
     <mat-form-field>
       <mat-label>Choose Race</mat-label>
       <mat-select [formControl]="choixRace">
@@ -9,6 +8,7 @@
       </mat-select>
       <mat-error *ngIf="choixRace.invalid">You must make a selection</mat-error>
     </mat-form-field>
+    
     <mat-form-field>
       <mat-label>Choose Classe</mat-label>
       <mat-select [formControl]="choixClasse">
@@ -16,11 +16,14 @@
       </mat-select>
       <mat-error *ngIf="choixClasse.invalid">You must make a selection</mat-error>
     </mat-form-field>
+
+    <mat-form-field>
+      <button mat-raised-button>Basic</button>
+    </mat-form-field>
     <br/>
+    <app-caracteristiques ></app-caracteristiques>
     <app-choix-competences></app-choix-competences>
-    
     <app-competences></app-competences>
     <app-sauvegardes></app-sauvegardes>
-    <app-caracteristiques ></app-caracteristiques>
     <app-talent style="display: inline-table;"></app-talent>
 </div>

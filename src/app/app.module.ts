@@ -14,6 +14,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule} from "@angular/material/form-field";
 import { MatSelectModule } from "@angular/material/select";
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CaracteristiquesComponent } from './fm/components/caracteristiques/caracteristiques.component';
 import { SauvegardesComponent } from './fm/components/sauvegardes/sauvegardes.component';
@@ -28,7 +29,7 @@ import { ChoixCompetenceComponent } from './fm/components/choix-competence/choix
   ],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule,
-    MatListModule, MatFormFieldModule, MatSelectModule, MatCheckboxModule,
+    MatListModule, MatFormFieldModule, MatSelectModule, MatCheckboxModule, MatIconModule,
     FormsModule, ReactiveFormsModule
   ],
   providers: [],

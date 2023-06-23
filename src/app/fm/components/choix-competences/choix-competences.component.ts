@@ -33,9 +33,8 @@ export class ChoixCompetencesComponent  implements OnInit {
       let nbCObligatoire: number = this.unPersonnage.classe.competencesClasse.filter(dataFiltree => (dataFiltree.obligatoire === true)).length;
       this.unPersonnage.nbCompeChoisie = nbCChoisie - nbCObligatoire;
       this.nbCompeChoisie = this.unPersonnage.nbCompeChoisie;
-      if (this.unPersonnage.nbCompeChoisie > this.unPersonnage.classe.nombreCompetence) {
+      if (this.unPersonnage.nbCompeChoisie >= this.unPersonnage.classe.nombreCompetence) {
         this.stopChoix = true;
-        console.log('Je suis dans le stop compe du parent ')
       } else {
         this.stopChoix = false;
       };

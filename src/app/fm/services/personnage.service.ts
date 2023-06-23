@@ -26,6 +26,6 @@ export class PersonnageService {
   }
   
   updatePersonnage(unPersonnage: Personnage) {
-    this._monPersonnage.next(unPersonnage);
+    this._monPersonnage.next(unPersonnage);    
   }
 }
